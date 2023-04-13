@@ -6,6 +6,10 @@
 :root {
     --main-color: #2296f2;
     --main-color-alt: #1787e0;
+    --text-color: #797979;
+    --gray: #e4e4e4;
+    --main-transition: 0.3s;
+    --padding-top: 50px;
 }
 html {
     scroll-behavior: smooth;
@@ -77,24 +81,22 @@ a {
     display: inline-block;
     text-align: center;
     height: 70px;
-
     line-height: 70px;
     padding: 0 25px;
     margin: 0 10px;
     font-size: 18px;
     font-weight: 400;
-    transition: all 0.2s;
-    -webkit-transition: all 0.2s;
-    -moz-transition: all 0.2s;
-    -ms-transition: all 0.2s;
-    -o-transition: all 0.2s;
+    transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
 }
 .header .container ul a:hover {
     color: var(--main-color);
     background-color: rgb(246, 246, 246);
 }
 .header .container ul a::before {
-    transition: 0.3s;
     position: absolute;
     background-color: var(--main-color);
     content: "";
@@ -104,10 +106,11 @@ a {
     height: 6px;
     border-radius: 5px;
     color: red;
-    -webkit-transition: 0.3s;
-    -moz-transition: 0.3s;
-    -ms-transition: 0.3s;
-    -o-transition: 0.3s;
+    transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
@@ -134,7 +137,7 @@ a {
     overflow: hidden;
 }
 .landing .container {
-    padding-top: 50px;
+    padding-top: var(--padding-top);
     display: flex;
     justify-content: space-around;
     align-items: flex-end;
@@ -218,7 +221,7 @@ a {
     border: 2px solid black;
     transition-delay: 0.3s;
     transition-timing-function: ease-out;
-    transition-duration: 0.4s;
+    transition-duration: var(--main-transition);
 }
 .global-header::before,
 .global-header::after {
@@ -265,11 +268,11 @@ a {
     padding: 0;
     width: 100%;
     box-shadow: 0px 1px 11px 0px #f3f3f3;
-    transition: 0.2s;
-    -webkit-transition: 0.2s;
-    -moz-transition: 0.2s;
-    -ms-transition: 0.2s;
-    -o-transition: 0.2s;
+    transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
 }
 
 .article:hover {
@@ -283,11 +286,11 @@ a {
 }
 .article img {
     width: 100%;
-    transition: 0.3s;
-    -webkit-transition: 0.3s;
-    -moz-transition: 0.3s;
-    -ms-transition: 0.3s;
-    -o-transition: 0.3s;
+    transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
 }
 .article:hover > img {
     transform: rotate(3deg) scale(1.07);
@@ -338,8 +341,21 @@ a {
 /* --------------------------------------- */
 /* --------------------------------------- */
 .gallery {
-    padding-top: 50px;
+    position: relative;
+    padding-top: var(--padding-top);
     background-color: #e4e4e4;
+}
+.gallery::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 30px;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-image: linear-gradient(135deg, white 25%, transparent 25%),
+        linear-gradient(225deg, white 25%, transparent 25%);
+    background-size: 30px 30px;
 }
 .gallery .container {
     padding-bottom: 15vh;
@@ -352,8 +368,8 @@ a {
 .box-container {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 45px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
 }
 .box {
     position: relative;
@@ -366,11 +382,11 @@ a {
 .box .img-box img {
     position: relative;
     max-width: 100%;
-    transition: 0.3s;
-    -webkit-transition: 0.3s;
-    -moz-transition: 0.3s;
-    -ms-transition: 0.3s;
-    -o-transition: 0.3s;
+    transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
 }
 .box .img-box {
     position: relative;
@@ -397,10 +413,179 @@ a {
 /* --------------------------------------- */
 /* --------------------------------------- */
 .feature {
-    padding-top: 50px;
+    padding: var(--padding-top) 0;
+    margin-bottom: 50px;
 }
+.feature .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    justify-content: center;
+    gap: 45px;
+}
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+    border: 1px solid #e7e6e6;
+}
+/* start style of image */
+.card .img {
+    position: relative;
+    overflow: hidden;
+}
+.card .img:before {
+    z-index: 1000;
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.card .img::after {
+    z-index: 1001;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-style: solid;
+    border-width: 0px 0px 180px 500px;
+    border-color: transparent transparent #fff transparent;
+    transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+}
+.card .img img {
+    margin-bottom: 20px;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+/* start style of image */
+
+.feature .text-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card .text-container h3 {
+    padding-bottom: 20px;
+    padding-top: 30px;
+    margin: 0;
+    position: relative;
+    font-size: 35px;
+    border-bottom-style: solid;
+    border-bottom-width: 6px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+.card .text-container p {
+    color: var(--text-color);
+    font-size: 22px;
+    padding: 10px;
+    text-align: center;
+    line-height: 2em;
+}
+
+.btn {
+    position: relative;
+    padding: 15px 30px;
+    border: 3px solid transparent;
+    font-weight: bolder;
+    font-size: 25px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: var(--main-transition);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+}
+.btn-1 {
+    background: linear-gradient(to right, #f44036 50%, white 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+}
+.btn-2 {
+    background: linear-gradient(to right, #009688 50%, white 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+}
+.btn-3 {
+    background: linear-gradient(to right, var(--main-color) 50%, white 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+}
+/* ------------------------- */
+/* ------------------------- */
+.card:first-child .img:before {
+    background-color: #f43f366c;
+}
+.card:first-child .text-container h3 {
+    border-bottom-color: #f44036;
+}
+.card .btn-1 {
+    border-color: #f44036;
+}
+/* ------------------------- */
+/* ------------------------- */
+
+.card:nth-child(2) .img:before {
+    background-color: #009687be;
+}
+.card:nth-child(2) .text-container h3 {
+    border-bottom-color: #009688;
+}
+.card .btn-2 {
+    border-color: #009688;
+}
+/* ----------------------- */
+/* ------------------------- */
+.card:last-child .img:before {
+    background-color: #2294f2ac;
+}
+.card:last-child .text-container h3 {
+    border-bottom-color: var(--main-color);
+}
+.card .btn-3 {
+    border-color: var(--main-color);
+}
+/* ------------------------- */
+/* ------------------------- */
+
+.card:hover .btn {
+    background-position: left bottom;
+}
+.card:hover .img::after {
+    overflow: hidden;
+    border-width: 170px 500px 100px 0;
+}
+/* ----------------------- */
+
 /* --------------------------------------- */
 /* --------------------------------------- */
 /*  end feature */
 /* --------------------------------------- */
 /* --------------------------------------- */
+
+/* start testimonials */
+.testimonials {
+    padding-top: var(--padding-top);
+    background-color: var(--gray);
+}
+.testimonials .container {
+    padding-top: var(--padding-top);
+}
+
+/* end testimonials */
