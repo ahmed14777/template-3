@@ -106,6 +106,9 @@ a {
     z-index: 10000;
 }
 .header .container {
+    position: relative;
+    margin-top: 0; /* rm mt bc this is the first container*/
+    margin-bottom: 0;
     z-index: 10;
     display: flex;
     justify-content: space-between;
@@ -119,14 +122,13 @@ a {
 .header .container > a:hover {
     cursor: pointer;
 }
-.header .container ul {
+.header .container .links {
     position: relative;
     display: flex;
 }
-.header .container ul a {
+.header .container .links a {
     position: relative;
     display: inline-block;
-    text-align: center;
     height: 70px;
     line-height: 70px;
     padding: 0 25px;
@@ -139,18 +141,18 @@ a {
     -ms-transition: var(--main-transition);
     -o-transition: var(--main-transition);
 }
-.header .container ul a:hover {
+.header .container .links a:hover {
     color: var(--main-color);
     background-color: rgb(246, 246, 246);
 }
-.header .container ul a::before {
+.header .container .links a::before {
     position: absolute;
     background-color: var(--main-color);
     content: "";
     width: 0;
     top: 0;
     left: 0;
-    height: 6px;
+    height: 4px;
     border-radius: 5px;
     color: red;
     transition: var(--main-transition);
@@ -163,12 +165,86 @@ a {
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
 }
-.header .container ul a:hover::before {
+.header .container .links a:hover::before {
     width: 100%;
 }
 /* --------------------------------------- */
 /* --------------------------------------- */
-/* end header */
+/* *start mega menu */
+/* --------------------------------------- */
+/* --------------------------------------- */
+.mega-menu {
+    transition: all 1s;
+    position: absolute;
+    opacity: 0;
+    padding: 15px;
+    display: flex;
+    width: 100%;
+    min-height: 50vh;
+    bottom: 100%;
+    right: 0%;
+    background-color: #fff;
+    border-bottom: 3px solid var(--main-color);
+}
+.mega-menu .img {
+    flex: 1;
+}
+.mega-menu ul {
+    display: flex;
+    flex-direction: column;
+}
+.mega-menu ul:first-of-type {
+    margin-right: 30px;
+}
+
+.mega-menu ul li .other-link {
+    display: block;
+    position: relative;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 15px;
+    padding: 0 10px;
+    color: var(--main-color);
+}
+.mega-menu ul li {
+    position: relative;
+    border-bottom: 1px solid var(--gray);
+    padding: 5px 0;
+}
+.mega-menu ul li::before {
+    position: absolute;
+    content: "";
+    width: 0%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    transition: var(--main-transition);
+    background-color: #e1e1e140;
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+}
+.mega-menu ul li:hover::before {
+    width: 100%;
+}
+
+.mega-menu ul .other-link .icon {
+    padding-right: 20px;
+}
+.mega-flex {
+    opacity: 1;
+    bottom: -50vh;
+}
+/* --------------------------------------- */
+/* --------------------------------------- */
+/* *end mega menu */
+/* --------------------------------------- */
+/* --------------------------------------- */
+
+/* --------------------------------------- */
+/* --------------------------------------- */
+/* *end header */
 /* --------------------------------------- */
 /* --------------------------------------- */
 
@@ -248,7 +324,7 @@ a {
 
 /* --------------------------------------- */
 /* --------------------------------------- */
-/*  start articles part */
+/*  *start articles part */
 /* --------------------------------------- */
 /* --------------------------------------- */
 
@@ -336,13 +412,13 @@ a {
 
 /* --------------------------------------- */
 /* --------------------------------------- */
-/*  end articles part */
+/*  *end articles part */
 /* --------------------------------------- */
 /* --------------------------------------- */
 
 /* --------------------------------------- */
 /* --------------------------------------- */
-/* start gallery */
+/* *start gallery */
 /* --------------------------------------- */
 /* --------------------------------------- */
 .gallery {
@@ -409,13 +485,13 @@ a {
 
 /* --------------------------------------- */
 /* --------------------------------------- */
-/*  end gallery */
+/*  *end gallery */
 /* --------------------------------------- */
 /* --------------------------------------- */
 
 /* --------------------------------------- */
 /* --------------------------------------- */
-/*  start feature */
+/*  *start feature */
 /* --------------------------------------- */
 /* --------------------------------------- */
 .feature {
@@ -435,7 +511,7 @@ a {
     padding-bottom: 20px;
     border: 1px solid #e7e6e6;
 }
-/* start style of image */
+/* *start style of image */
 .card .img {
     position: relative;
     overflow: hidden;
@@ -581,11 +657,11 @@ a {
 
 /* --------------------------------------- */
 /* --------------------------------------- */
-/*  end feature */
+/*  *end feature */
 /* --------------------------------------- */
 /* --------------------------------------- */
 
-/* start testimonials */
+/* *start testimonials */
 .testimonials {
     padding: var(--padding-top) 0;
     background-color: var(--gray);
@@ -632,9 +708,9 @@ a {
     color: #ffc107;
 }
 
-/* end testimonials */
+/* *end testimonials */
 
-/* start team members */
+/* *start team members */
 .team-members {
     padding: var(--padding-top) 0;
 }
@@ -745,9 +821,9 @@ a {
 .team-members .box:hover .info h4 {
     color: var(--text-color);
 }
-/* end team members */
+/* *end team members */
 
-/* start services */
+/* *start services */
 .services {
     position: relative;
     background-color: var(--gray);
@@ -850,4 +926,4 @@ a {
     -o-transform: skewX(331deg);
 }
 
-/* end services */ ;
+/* *end services */ ;

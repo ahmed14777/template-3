@@ -29,10 +29,19 @@
 }
 
 @media (max-width: 578px) {
-    .header .container ul a {
+    .header .container .links .link {
         font-size: 13px;
-        padding: 5px;
+        padding: 10px;
         margin: 0px;
+    }
+    .mega-menu {
+        flex-direction: column;
+    }
+    .mega-flex {
+        bottom: -65vh;
+    }
+    .mega-menu ul li {
+        padding: 0;
     }
 }
 @media (max-width: 992px) {
@@ -47,6 +56,12 @@
     .landing .container .landing-text {
         width: 100%;
         text-align: center;
+    }
+    .mega-menu .img {
+        display: none;
+    }
+    .mega-menu ul {
+        flex: 1;
     }
 }
 
