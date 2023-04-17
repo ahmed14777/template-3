@@ -181,10 +181,14 @@ a {
     display: flex;
     width: 100%;
     min-height: 50vh;
-    bottom: 100%;
+    bottom: 90vh;
     right: 0%;
     background-color: #fff;
     border-bottom: 3px solid var(--main-color);
+}
+.mega-flex {
+    opacity: 1;
+    bottom: -50vh;
 }
 .mega-menu .img {
     flex: 1;
@@ -232,10 +236,7 @@ a {
 .mega-menu ul .other-link .icon {
     padding-right: 20px;
 }
-.mega-flex {
-    opacity: 1;
-    bottom: -50vh;
-}
+
 /* --------------------------------------- */
 /* --------------------------------------- */
 /* *end mega menu */
