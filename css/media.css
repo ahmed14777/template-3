@@ -47,6 +47,13 @@
     .mega-menu ul {
         flex: 1;
     }
+    .skills-container img,
+    .steps-container .img-steps {
+        display: none;
+    }
+    .skills-container .skills {
+        width: 100%;
+    }
 }
 
 @media (max-width: 768px) {
