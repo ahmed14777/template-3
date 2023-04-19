@@ -969,9 +969,15 @@ a {
 .progress span {
     position: absolute;
     left: 0;
-    height: 100%;
     top: 0;
+    border: 1px solid;
+    height: 100%;
     background-color: var(--main-color);
+    transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
 }
 .skills .skill:first-child .progress span {
     width: 90%;
@@ -1067,3 +1073,126 @@ a {
     color: var(--text-color);
 }
 /* end work steps  */
+
+/* start events */
+.events {
+    padding-bottom: 30px;
+}
+.events .container {
+    position: relative;
+}
+.event {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.event img {
+    margin-right: 100px;
+    width: 50%;
+}
+
+.time {
+    display: flex;
+}
+.unit {
+    position: relative;
+    display: flex;
+    max-width: 80px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 30px 0 0;
+    margin: 0 25px 25px 0;
+    border: 2px solid var(--gray);
+    border-radius: 10px;
+    transition: var(--main-transition);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+}
+.unit:hover {
+    border: 2px solid var(--main-color);
+}
+.unit span {
+    font-size: 20px;
+    margin: 15px 15px 0;
+}
+.unit span:first-child {
+    color: var(--main-color);
+}
+.unit span:last-child {
+    display: block;
+    width: 100%;
+    font-size: 18px;
+    border-top: 2px solid var(--gray);
+    transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+}
+.unit:hover.unit span:last-child {
+    border-color: var(--main-color);
+}
+.event .info h2 {
+    font-size: 28px;
+    text-align: center;
+}
+.info .description {
+    text-align: center;
+    line-height: 1.3em;
+    font-size: 18px;
+    color: var(--text-color);
+}
+/* end events */
+.events .container form {
+    width: 50%;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 50px;
+    background-color: var(--gray);
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+}
+#email {
+    padding: 15px 30px;
+    border: none;
+    height: 80%;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+#submit {
+    padding: 15px;
+    border-radius: 30px;
+    background-color: var(--main-color);
+    color: #fff;
+    border: none;
+    font-size: 20px;
+    transition: var(--main-transition);
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+}
+#submit:hover {
+    background-color: #0081e6;
+    cursor: pointer;
+}
