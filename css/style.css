@@ -1150,7 +1150,6 @@ a {
     font-size: 18px;
     color: var(--text-color);
 }
-/* end events */
 .events .container form {
     width: 50%;
     margin: 50px auto;
@@ -1197,3 +1196,151 @@ a {
     background-color: #0081e6;
     cursor: pointer;
 }
+/* end events */
+/* start pricing plans */
+.pricing {
+    padding: 50px;
+    margin-top: 100px;
+    background-color: var(--gray);
+}
+.container {
+    padding: var(--padding-top) 0;
+}
+.price-cards {
+    display: grid;
+    gap: 50px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+.price-cards .price-card {
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    z-index: 10;
+
+    text-align: center;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.price-cards .price-card::before,
+.price-cards .price-card::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 50%;
+    z-index: 1;
+    transition: var(--main-transition);
+    background-color: #e3e3e358;
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+}
+.price-cards .price-card::before {
+    border-radius: 10px 10px 0 0;
+    right: 0;
+    top: 0;
+    -webkit-border-radius: 10px 10px 0 0;
+    -moz-border-radius: 10px 10px 0 0;
+    -ms-border-radius: 10px 10px 0 0;
+    -o-border-radius: 10px 10px 0 0;
+}
+.price-cards .price-card::after {
+    left: 0;
+    bottom: 0;
+    border-radius: 0 0 10px 10px;
+    -webkit-border-radius: 0 0 10px 10px;
+    -moz-border-radius: 0 0 10px 10px;
+    -ms-border-radius: 0 0 10px 10px;
+    -o-border-radius: 0 0 10px 10px;
+}
+.price-cards .price-card:hover::before,
+.price-cards .price-card:hover::after {
+    width: 100%;
+}
+.pricing-info img {
+    width: 100px;
+    z-index: 3;
+    margin: 25px 0;
+}
+.pricing-info {
+    z-index: 10;
+}
+.pricing-info h4 {
+    font-size: 40px;
+    color: var(--main-color);
+}
+.pricing-details ul {
+}
+.pricing-details ul li {
+    position: relative;
+    text-align: start;
+    padding: 15px 0;
+    border-top: 1px solid #dddddd6c;
+}
+.fa-check {
+    color: var(--main-color);
+    margin-right: 10px;
+}
+
+.pricing-details {
+    padding: 20px;
+    font-size: 1.3rem;
+    z-index: 10;
+}
+.price-card button {
+    width: fit-content;
+    margin: 20px auto 0;
+    padding: 15px 30px;
+    border: 3px solid var(--main-color);
+    border-radius: 10px;
+    background-color: #fff;
+    color: var(--main-color);
+    font-size: 1.2rem;
+    z-index: 3;
+    font-weight: bolder;
+    transition: var(--main-transition);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+}
+.price-card button:hover {
+    background-color: var(--main-color);
+    color: #fff;
+}
+.price-cards .price-card:hover button {
+    background-color: var(--main-color);
+    color: #fff;
+}
+.card-active {
+    position: absolute;
+    z-index: 10;
+    background-color: var(--main-color);
+    padding: 20px 35px 20px 10px;
+    font-size: 20px;
+    font-weight: bold;
+    transform: rotate(90deg);
+    right: -25px;
+    top: 46px;
+    color: #fff;
+}
+.card-active::before {
+    position: absolute;
+    content: "";
+    bottom: 2px;
+    right: 0;
+    border-width: 30px;
+    border-color: transparent #fff transparent transparent;
+    border-style: solid;
+}
+
+/* end pricing plans */
