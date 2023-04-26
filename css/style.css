@@ -1419,7 +1419,7 @@ a {
     padding: 20px;
     margin: 10px;
     transform: skewY(346deg);
-    box-shadow: 5px 15px 50px -10px var(--main-color);
+    box-shadow: 5px 15px 50px -10px #999;
     transition: var(--main-transition);
     -webkit-transition: var(--main-transition);
     -moz-transition: var(--main-transition);
