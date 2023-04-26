@@ -1204,7 +1204,7 @@ a {
 /* end events */
 /* start pricing plans */
 .pricing {
-    padding: 50px;
+    /* padding: 50px; */
     margin-top: 100px;
     background-color: var(--gray);
 }
