@@ -92,12 +92,10 @@
     }
     .header .container {
         display: flex;
+        padding: 0;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-    }
-    .header .container > a {
-        margin-bottom: 20px;
     }
     .description {
         font-size: 14px;
@@ -138,7 +136,7 @@
         flex-direction: column;
     }
     .mega-flex {
-        bottom: -80vh;
+        bottom: -480px;
     }
     .mega-menu ul li {
         padding: 0;
