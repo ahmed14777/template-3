@@ -1411,12 +1411,31 @@ a {
     font-weight: bolder;
 }
 .stats .boxes .box {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;
+    margin: 10px;
+    transform: skewY(346deg);
+    box-shadow: 5px 15px 50px -10px var(--main-color);
+    transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
 }
+
+.stats .boxes .box:hover {
+    transform: skewY(360deg) scale(1.1);
+    box-shadow: 1px 20px 20px -5px #999;
+    -webkit-transform: skewY(360deg) scale(1.1);
+    -moz-transform: skewY(360deg) scale(1.1);
+    -ms-transform: skewY(360deg) scale(1.1);
+    -o-transform: skewY(360deg) scale(1.1);
+}
+
 .stats .boxes .box .icon-stats {
     font-size: 40px;
     margin-bottom: 5px;

@@ -147,4 +147,7 @@
     .time {
         flex-wrap: wrap;
     }
+    .stats .boxes .box {
+        margin-bottom: 30px;
+    }
 }
