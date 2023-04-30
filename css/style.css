@@ -16,6 +16,28 @@ body {
     width: 100%;
     overflow-x: hidden;
 }
+body > * {
+    opacity: 0 !important;
+    transition: 1s !important;
+    transform: translateX(100%);
+    -webkit-transition: 1s !important;
+    -moz-transition: 1s !important;
+    -ms-transition: 1s !important;
+    -o-transition: 1s !important;
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+}
+.show {
+    opacity: 1 !important ;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+}
+
 html {
     scroll-behavior: smooth;
 }
